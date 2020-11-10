@@ -2,7 +2,7 @@ require 'pry'
 
 def nyc_pigeon_organizer(data)
   hash = data.each_with_object({}) do |(key, value), hash| 
-    value.each do |key1, value1| 
+    value.each do |key1, value1| key.to_s
       value1.each do |name| 
         if !hash[name]
           hash[name] = {}
@@ -10,7 +10,7 @@ def nyc_pigeon_organizer(data)
       if !hash[name][key]
         hash[name][key] = []
       end
-      hash[name][key].push(key1).flatten
+      hash[name][key].push(key1)
   end
 end
 end
